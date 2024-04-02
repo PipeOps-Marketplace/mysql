@@ -1,3 +1,5 @@
+FROM mysql:8.0
+
 # Define build arguments
 ARG PORT_ARG
 ARG MYSQL_DATABASE_ARG
@@ -11,8 +13,6 @@ ENV PORT=$PORT_ARG \
     MYSQL_USER=$MYSQL_USER_ARG \
     MYSQL_PASSWORD=$MYSQL_PASSWORD_ARG \
     MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD_ARG
-
-FROM mysql:8.0
 
 # Create a directory for MySQL configuration
 RUN mkdir -p /etc/mysql/conf.d
